@@ -11,16 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create("holiday", function (Blueprint $table) {
+        Schema::create("holidays", function (Blueprint $table) {
             $table->bigIncrements("id");
             $table->unsignedBigInteger("location_id");
             $table->string("title");
             $table->date("start_date");
             $table->integer("duration");
-            $table->string("price");
+            $table->unsignedDecimal("price", 8, 2);
             $table->integer("free_slots");
 
-            $table->foreign("location_id")->references("id")->on("location")->onDelete("RESTRICT");
+            $table->timestamps();
+
+            $table->foreign("location_id")->references("id")->on("locations")->onDelete("RESTRICT");
         });
     }
 
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists("holiday");
+        Schema::dropIfExists("holidays");
     }
 };
