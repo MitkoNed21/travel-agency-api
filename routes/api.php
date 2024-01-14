@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\HolidayController;
+use App\Http\Controllers\LocationController;
+use App\Http\Controllers\ReservationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,9 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/hello', function (Request $request) {
+Route::get('/hello', function (Request $request) {  
     return json_encode("Hello, world!");
 });
+
+Route::resource("/holidays", HolidayController::class);
+Route::resource("/locations", LocationController::class);
+Route::resource("/reservations", ReservationController::class);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
