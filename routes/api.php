@@ -25,6 +25,11 @@ Route::resource("/holidays", HolidayController::class);
 Route::resource("/locations", LocationController::class);
 Route::resource("/reservations", ReservationController::class);
 
+Route::put("/locations", [LocationController::class, "update"]);
+Route::put("/holidays", [HolidayController::class, "update"]);
+Route::put("/reservations", [ReservationController::class, "update"]);
+
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
