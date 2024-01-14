@@ -19,7 +19,7 @@ class Holiday extends Model
     ];
 
     public function location() {
-        return $this->bekongsTo(Location::class);
+        return $this->belongsTo(Location::class);
     }
 
     public function reservations() {
