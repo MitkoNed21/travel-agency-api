@@ -25,3 +25,7 @@ Adjust the settings for database connection
 5. Run `php artisan key:generate`
 6. Run `php artisan migrate --seed`
 7. Run `php artisan serve --port 8080`
+
+**If there is a reservation for a holiday and the user tries to delete it, it won't work, becuase table relation has been set to ON DELETE RESTRICT!**
+
+**If there is a holiday at a location and the user tries to delete it, it won't work, becuase table relation has been set to ON DELETE RESTRICT!**
