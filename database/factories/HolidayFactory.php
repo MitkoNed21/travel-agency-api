@@ -19,9 +19,9 @@ class HolidayFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(5),
-            'start_date' => $this->faker->date(max: '2030-12-31'),
+            'start_date' => $this->faker->dateTimeBetween('-3 years', '+1 year'),
             'duration' => $this->faker->numberBetween(1, 14),
-            'price' => (string)$this->faker->randomFloat(2, min: 0, max: 10000),
+            'price' => (string)$this->faker->randomFloat(2, min: 100, max: 10000),
             'free_slots' => $this->faker->numberBetween(0, 30),
 
             'location_id' => Location::factory(),
