@@ -16,7 +16,7 @@ class HolidayResource extends JsonResource
     {
         return [
             "id" => $this->id,
-            "location" => $this->location,
+            "location" => (new LocationResource($this->location))->toArray($request),
             "title" => $this->title,
             "startDate" => $this->start_date,
             "duration" => $this->duration,

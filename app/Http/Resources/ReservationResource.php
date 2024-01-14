@@ -18,7 +18,7 @@ class ReservationResource extends JsonResource
             "id" => $this->id,
             "contactName" => $this->contact_name,
             "phoneNumber" => $this->phone_number,
-            "holiday" => $this->holiday,
+            "holiday" => (new HolidayResource($this->holiday))->toArray($request),
         ];
     }
 }
