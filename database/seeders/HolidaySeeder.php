@@ -13,9 +13,9 @@ class HolidaySeeder extends Seeder
      */
     public function run(): void
     {
-        Holiday::factory()->count(150)->create();
-        Holiday::factory()->count(100)->hasReservations(20)->create();
-        Holiday::factory()->count(35)->hasReservations(10)->create();
-        Holiday::factory()->count(8)->hasReservations(1)->create();
+        Holiday::factory()->count(15)->create();
+        Holiday::factory()->count(10)->hasReservations(5)->create();
+        Holiday::factory()->count(8)->hasReservations(4)->create();
+        Holiday::factory()->count(3)->hasReservations(1)->create();
     }
 }
